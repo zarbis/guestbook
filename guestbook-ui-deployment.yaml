@@ -5,6 +5,7 @@ metadata:
   labels:
     alice: bob
     foo: bar
+    my: label
 spec:
   replicas: 1
   revisionHistoryLimit: 3
