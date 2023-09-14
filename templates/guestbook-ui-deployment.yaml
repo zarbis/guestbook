@@ -2,10 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: guestbook-ui
-  labels:
-    alice: bob
-    foo: bar
-    my: label
+  labels: {{ toYaml .Values.labels | nindent 4 }}
 spec:
   replicas: 1
   revisionHistoryLimit: 3
