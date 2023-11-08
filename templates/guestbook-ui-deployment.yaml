@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: guestbook-ui
+  name: nginx-test
   labels: {{ toYaml .Values.labels | nindent 4 }}
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: guestbook-ui
+      app: nginx-test
   template:
     metadata:
       labels:
-        app: guestbook-ui
+        app: nginx-test
     spec:
       containers:
-      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
-        name: guestbook-ui
+      - image: nginx:latest
+        name: nginx-test
         ports:
         - containerPort: 8080
