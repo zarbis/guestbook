@@ -15,7 +15,7 @@ spec:
         app: nginx-test
     spec:
       containers:
-      - image: nginx:latest
+      - image: docker.io/nginxinc/nginx-unprivileged:latest
         name: nginx-test
         ports:
         - containerPort: 8080
