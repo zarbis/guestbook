@@ -1,21 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-test
-  labels: {{ toYaml .Values.labels | nindent 4 }}
+  name: nginx
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: nginx-test
+      app: nginx
   template:
     metadata:
       labels:
-        app: nginx-test
+        app: nginx
     spec:
       containers:
       - image: docker.io/nginxinc/nginx-unprivileged:latest
-        name: nginx-test
+        name: nginx
         ports:
         - containerPort: 8080
