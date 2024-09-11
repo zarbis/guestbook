@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: nginx
   labels:
-    app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+    app.kubernetes.io/version: {{ .Chart.Version | quote }}
 spec:
   replicas: 1
   revisionHistoryLimit: 3
